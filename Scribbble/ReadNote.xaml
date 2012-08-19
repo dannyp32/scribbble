@@ -1,0 +1,71 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Scribbble.ReadNote"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="White" BackgroundColor="#2e3746" >
+            <shell:ApplicationBarIconButton  IconUri="icons/appbar.feature.email.rest.png" Text="send" Click="OnSend"/>
+            <shell:ApplicationBarIconButton IconUri="icons/appbar.edit.rest.png" Text="edit" Click="OnEdit"/>
+            <shell:ApplicationBarIconButton IconUri="icons/appbar.delete.rest.png" Text="delete" Click="OnDelete"/>
+            <shell:ApplicationBarIconButton IconUri="icons/appbar.cancel.rest.png" Text="cancel" Click="OnCancel"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Send note as an e-mail" Click="OnSend"/>
+                <shell:ApplicationBarMenuItem Text="Edit"  Click="OnEdit"/>
+                <shell:ApplicationBarMenuItem Text="Delete" Click="OnDelete"/>
+                <shell:ApplicationBarMenuItem Text="Cancel" Click="OnCancel"/>
+                <shell:ApplicationBarMenuItem Text="Review Scribbble" Click="OnReview"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="images/newNoteEdit.png" Stretch="None" AlignmentY="Top"/>
+        </Grid.Background>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible" Width="Auto">
+                <TextBlock x:Name="Subject" DoubleTap="textDoubleTap" Margin="0,64,0,0" Foreground="#3b3f48" FontSize="48" FontFamily="Segoe WP"/>
+            </ScrollViewer>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-44,12,0" AllowDrop="False">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Height="Auto">
+                <TextBlock x:Name="Body" TextWrapping="Wrap" DoubleTap="textDoubleTap" Margin="0, 20, 0, 0" Foreground="#3b3f48" FontSize="30" FontFamily="Segoe WP Light"/>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
