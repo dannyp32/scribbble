@@ -42,10 +42,10 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="White" BackgroundColor="#2e3746" >
             <shell:ApplicationBarIconButton IconUri="/icons/appbar.save.rest.png" Text="save" Click="OnSave"/>
-            <shell:ApplicationBarIconButton IconUri="/icons/appbar.delete.rest.png" Text="delete" Click="OnCancel"/>
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.cancel.rest.png" Text="delete" Click="OnCancel"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Save" Click="OnSave"/>
-                <shell:ApplicationBarMenuItem Text="Delete" Click="OnCancel"/>
+                <shell:ApplicationBarMenuItem Text="Cancel" Click="OnCancel"/>
                 <shell:ApplicationBarMenuItem Text="Review Scribbble" Click="OnReview"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

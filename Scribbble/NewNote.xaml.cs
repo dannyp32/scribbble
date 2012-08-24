@@ -75,7 +75,6 @@ namespace Scribbble
 
         private void OnCancel(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you want to delete this message?");
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 

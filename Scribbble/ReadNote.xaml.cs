@@ -63,7 +63,6 @@ namespace Scribbble
 
         private void OnDelete(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you would like to delete this message?");
             var template = storage.GetItems()
                 .Single(t => t.Id == TemplateId);
 
